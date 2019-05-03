@@ -12,23 +12,40 @@ import WebKit
 class CommandCell: UITableViewCell {
     
     
-    @IBOutlet weak var label: UILabel!
-    @IBOutlet weak var textView: UITextView!
-   
-    @IBOutlet weak var video: WKWebView!
+    @IBOutlet weak var LigaNameLabel: UILabel!
+    @IBOutlet weak var matchesLabel: UILabel!
+    @IBOutlet weak var imageMatches : UIImageView!
+    
+    @IBOutlet weak var matchesName: UILabel!
+    @IBOutlet weak var wkWebViewVideo: WKWebView!
+    
+    @IBOutlet weak var scores: UILabel!
+    
+    
     
     func configure(with comment: Comment) {
-        self.label.text = comment.title
-      //  self.textView.text = comment.embed
-
-        let queue = DispatchQueue.global(qos: .utility)
-        queue.async{
-                DispatchQueue.main.async {
-                    self.video.loadHTMLString(comment.embed, baseURL: nil)
-            }
+        
+       
+        self.LigaNameLabel.text = comment.name
+        self.matchesLabel.text = comment.title
+        self.scores.text = comment.titleVideo
+        
+        DispatchQueue.main.async {
+            self.imageMatches.layer.cornerRadius = self.imageMatches.frame.size.width / 2
+            self.imageMatches.clipsToBounds = true
+            
+            
+            let data = NSData(contentsOf: NSURL(string: comment.thumbnail)! as URL)
+            guard data != nil else {return}
+       
+            self.imageMatches.image = UIImage(data: data! as Data)
+         
+      
         }
        
-        
-
     }
+    
+    
 }
+
+

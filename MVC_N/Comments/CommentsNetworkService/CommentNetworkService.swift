@@ -24,6 +24,7 @@ class CommentNetworkService {
             do {
                 let response = try GetCommentResponce(json: json)
                 completion(response)
+              
             }
             catch {
                 print(error)

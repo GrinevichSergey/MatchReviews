@@ -21,7 +21,10 @@ class NetWorkService {
             guard let data = data else {return}
             
             do {
-                let json = try JSONSerialization.jsonObject(with: data, options: [])
+                let object = try JSONDecoder().decode([Comment2].self, from: data)
+                print(object.first?.title)
+                
+                let json = try JSONSerialization.jsonObject(with: data, options: []) 
                 DispatchQueue.main.async(execute: {
                     completion(json)
                 })
