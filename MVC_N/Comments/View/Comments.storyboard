@@ -17,6 +17,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ty8-GO-SLN">
+                                <rect key="frame" x="177.5" y="355.5" width="20" height="20"/>
+                            </activityIndicatorView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hBE-9K-u07">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -75,7 +78,6 @@
                                             <outlet property="imageMatches" destination="20q-Wu-X21" id="5xc-IS-pbP"/>
                                             <outlet property="matchesLabel" destination="u5b-oZ-EPy" id="aS1-CS-bU8"/>
                                             <outlet property="scores" destination="Sgd-10-lYD" id="Bd8-Bv-wrN"/>
-                                            <segue destination="Ph5-9Y-gGn" kind="showDetail" identifier="toVideo" id="tcq-Mb-Oej"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -87,8 +89,10 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="ty8-GO-SLN" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="6JA-6d-VEd"/>
                             <constraint firstItem="hBE-9K-u07" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="FGx-E8-Fn7"/>
                             <constraint firstItem="hBE-9K-u07" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="OqB-VD-apz"/>
+                            <constraint firstItem="ty8-GO-SLN" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="QWd-tq-5K5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hBE-9K-u07" secondAttribute="bottom" id="hGI-vS-dsE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hBE-9K-u07" secondAttribute="trailing" id="ksZ-AE-4qO"/>
                         </constraints>
@@ -96,6 +100,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="fp1-Hh-VbM"/>
                     <connections>
+                        <outlet property="activityIndicate" destination="ty8-GO-SLN" id="E72-44-VQR"/>
                         <outlet property="tableView" destination="hBE-9K-u07" id="U8Y-fr-vZa"/>
                     </connections>
                 </viewController>
@@ -106,7 +111,7 @@
         <!--Video View Controller-->
         <scene sceneID="5Ra-di-jzO">
             <objects>
-                <viewController id="Ph5-9Y-gGn" customClass="VideoViewController" customModule="MVC_N" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="VideoViewController" storyboardIdentifier="VideoViewController" id="Ph5-9Y-gGn" customClass="VideoViewController" customModule="MVC_N" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mL0-H5-rKo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -114,48 +119,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="20z-BL-DIE">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="274" id="IVz-0O-8nB" customClass="CommandCell" customModule="MVC_N" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="274"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IVz-0O-8nB" id="4Ha-m3-BUA">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="273.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2WC-J1-WVf">
-                                                    <rect key="frame" x="15" y="46" width="345" height="228"/>
-                                                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="228" id="BCp-j3-wAc"/>
-                                                    </constraints>
-                                                    <wkWebViewConfiguration key="configuration">
-                                                        <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                                        <wkPreferences key="preferences"/>
-                                                    </wkWebViewConfiguration>
-                                                </wkWebView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DDI-km-dZm">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="38"/>
-                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="21"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="DDI-km-dZm" firstAttribute="leading" secondItem="4Ha-m3-BUA" secondAttribute="leading" constant="15" id="4KO-dM-l3n"/>
-                                                <constraint firstItem="2WC-J1-WVf" firstAttribute="bottom" secondItem="4Ha-m3-BUA" secondAttribute="bottomMargin" constant="11" id="CE5-Na-WWF"/>
-                                                <constraint firstItem="2WC-J1-WVf" firstAttribute="top" secondItem="DDI-km-dZm" secondAttribute="bottom" constant="8" id="Vvl-oD-Vgp"/>
-                                                <constraint firstItem="DDI-km-dZm" firstAttribute="top" secondItem="4Ha-m3-BUA" secondAttribute="top" id="gQc-wZ-naV"/>
-                                                <constraint firstAttribute="trailing" secondItem="DDI-km-dZm" secondAttribute="trailing" constant="15" id="sNY-5y-Dp1"/>
-                                                <constraint firstItem="2WC-J1-WVf" firstAttribute="trailing" secondItem="4Ha-m3-BUA" secondAttribute="trailingMargin" id="u3c-Mg-aGF"/>
-                                                <constraint firstItem="2WC-J1-WVf" firstAttribute="leading" secondItem="4Ha-m3-BUA" secondAttribute="leadingMargin" id="vtT-bk-rO1"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="matchesName" destination="DDI-km-dZm" id="bac-oY-m5H"/>
-                                            <outlet property="wkWebViewVideo" destination="2WC-J1-WVf" id="hNh-Nv-nVi"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="Ph5-9Y-gGn" id="c5P-tB-6FJ"/>
                                     <outlet property="delegate" destination="Ph5-9Y-gGn" id="suG-Ly-H8U"/>
@@ -178,7 +141,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qh1-et-kGX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1861.5999999999999" y="26.53673163418291"/>
+            <point key="canvasLocation" x="1798" y="27"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="QPf-9i-idQ">
@@ -196,7 +159,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qFy-8X-bSc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="48.799999999999997" y="26.53673163418291"/>
+            <point key="canvasLocation" x="146" y="27"/>
         </scene>
     </scenes>
 </document>

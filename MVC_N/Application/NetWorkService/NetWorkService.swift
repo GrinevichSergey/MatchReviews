@@ -24,7 +24,7 @@ class NetWorkService {
                 let object = try JSONDecoder().decode([Comment2].self, from: data)
                 print(object.first?.title)
                 
-                let json = try JSONSerialization.jsonObject(with: data, options: []) 
+                let json = try JSONSerialization.jsonObject(with: data, options: [])
                 DispatchQueue.main.async(execute: {
                     completion(json)
                 })

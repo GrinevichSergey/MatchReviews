@@ -76,7 +76,6 @@ class VideoViewController: UIViewController, UITableViewDelegate, UITableViewDat
    
     
     var videoMoments: Comment?//: [] = [Comment]()
-    var id = Int()
     @IBOutlet weak var tableVideo: UITableView!
     
     

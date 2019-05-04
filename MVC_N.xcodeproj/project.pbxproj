@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3704F5FA2274E9A300C37212 /* Comments.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3704F5F92274E9A300C37212 /* Comments.storyboard */; };
+		3754415A227C2736002C51D9 /* Comments.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37544159227C2736002C51D9 /* Comments.storyboard */; };
 		37FFAECB2263798900C65696 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FFAECA2263798900C65696 /* AppDelegate.swift */; };
 		37FFAECD2263798900C65696 /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FFAECC2263798900C65696 /* CommentsViewController.swift */; };
 		37FFAED22263798B00C65696 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37FFAED12263798B00C65696 /* Assets.xcassets */; };
@@ -26,7 +26,7 @@
 		09124FEC356311680F38B414 /* Pods-MVC_N.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVC_N.debug.xcconfig"; path = "Target Support Files/Pods-MVC_N/Pods-MVC_N.debug.xcconfig"; sourceTree = "<group>"; };
 		25EB66B6CBF6DD344EA81E3C /* Pods_MVC_N.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVC_N.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		31F7886B906CEC8BCC7FE622 /* Pods-MVC_N.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVC_N.release.xcconfig"; path = "Target Support Files/Pods-MVC_N/Pods-MVC_N.release.xcconfig"; sourceTree = "<group>"; };
-		3704F5F92274E9A300C37212 /* Comments.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Comments.storyboard; path = ../../../../../../../.Trash/Comments.storyboard; sourceTree = "<group>"; };
+		37544159227C2736002C51D9 /* Comments.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Comments.storyboard; sourceTree = "<group>"; };
 		37FFAEC72263798900C65696 /* MVC_N.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVC_N.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37FFAECA2263798900C65696 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37FFAECC2263798900C65696 /* CommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
@@ -140,7 +140,7 @@
 		37FFAEE222637AA800C65696 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				3704F5F92274E9A300C37212 /* Comments.storyboard */,
+				37544159227C2736002C51D9 /* Comments.storyboard */,
 				37FFAEE522637EB400C65696 /* CommandCell.swift */,
 			);
 			path = View;
@@ -265,7 +265,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3704F5FA2274E9A300C37212 /* Comments.storyboard in Resources */,
+				3754415A227C2736002C51D9 /* Comments.storyboard in Resources */,
 				37FFAED52263798B00C65696 /* LaunchScreen.storyboard in Resources */,
 				37FFAED22263798B00C65696 /* Assets.xcassets in Resources */,
 			);
@@ -472,6 +472,7 @@
 			baseConfigurationReference = 09124FEC356311680F38B414 /* Pods-MVC_N.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5954Y94DDR;
 				INFOPLIST_FILE = "$(SRCROOT)/MVC_N/Supporting files/Info.plist";
@@ -482,6 +483,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Main.MVC-N";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -492,6 +494,7 @@
 			baseConfigurationReference = 31F7886B906CEC8BCC7FE622 /* Pods-MVC_N.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5954Y94DDR;
 				INFOPLIST_FILE = "$(SRCROOT)/MVC_N/Supporting files/Info.plist";
@@ -502,6 +505,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Main.MVC-N";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

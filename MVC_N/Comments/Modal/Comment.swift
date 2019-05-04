@@ -60,7 +60,7 @@ struct Comment {
     var videos: Array<Dictionary<String, Any>>
     
     init?(dict: [String: AnyObject]) {
-        let moyHui: MOY_HUI = ("MOY", "hui")
+       // let moyHui: MOY_HUI = ("MOY", "hui")
         
         guard let title = dict["title"] as? String,
             let embed = dict["embed"] as? String,
