@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import Alamofire
+import AlamofireImage
 
 /*
  "title": "Chelsea - Manchester United",
@@ -53,6 +55,7 @@ struct Comment {
     var embed : String
     var thumbnail : String
     var name : String
+    var thumbnail_image = UIImage()
     
     var titleVideo: String
     var embedVideo: String
@@ -86,6 +89,8 @@ struct Comment {
         //            print(embedVideo)
         //
         //        }
+        
+        
         
         self.title = title
         self.embed = embed

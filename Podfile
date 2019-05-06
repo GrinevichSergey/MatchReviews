@@ -7,5 +7,5 @@ target 'MVC_N' do
 
   # Pods for MVC_N
   pod 'Alamofire'
-
-end
+  pod 'AlamofireImage', '~> 3.5'
+end 
